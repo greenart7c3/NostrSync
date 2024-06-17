@@ -82,13 +82,11 @@ const fixedRelays = [
 var relays = [];
 
 function updateRelays() {
-    fetch("https://api.nostr.watch/v1/online")
-      .then((response) => response.json())
-      .then((json) => {
-        relays = fixedRelays.concat(json);
-        // Call a function to display the relays as needed.
-        displayRelays();
-      });
+    // Show only fixed relays
+    relays = fixedRelays;
+    // Call a function to display the relays as needed.
+    displayRelays();
+
 }
 
 // Initial call to populate relays array
