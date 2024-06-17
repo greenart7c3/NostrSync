@@ -68,7 +68,10 @@ function generateUniqueFileName(originalFileName) {
 }
 
 const downloadFileCopy = (data, fileName) => {
-  const prettyJs = "const data = " + JSON.stringify(data, null, 2);
+  let prettyJs = ""
+  for (nostrEvent of data) {
+    prettyJs += JSON.stringify(nostrEvent) + "\n"
+  }
   const tempLink = document.createElement("a");
   const taBlob = new Blob([prettyJs], { type: "text/javascript" });
   tempLink.setAttribute("href", URL.createObjectURL(taBlob));

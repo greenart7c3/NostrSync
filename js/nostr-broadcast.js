@@ -77,7 +77,7 @@ const fetchAndBroadcast = async () => {
   $('#checking-relays-box').css('display', 'flex')
   $('#checking-relays-header').text("Broadcasting to Relays:")
 
-  await broadcastEvents(data)
+  //await broadcastEvents(data)
 
   // inform user that broadcasting is done
   $('#broadcasting-status').html(txt.broadcasting + checkMark)
