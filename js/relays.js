@@ -82,9 +82,6 @@ const fixedRelays = [
 var relays = [];
 
 function updateRelays() {
-  const showAllRelays = document.getElementById("relayToggle").checked;
-
-  if (showAllRelays) {
     fetch("https://api.nostr.watch/v1/online")
       .then((response) => response.json())
       .then((json) => {
@@ -92,19 +89,10 @@ function updateRelays() {
         // Call a function to display the relays as needed.
         displayRelays();
       });
-  } else {
-    // Show only fixed relays
-    relays = fixedRelays;
-    // Call a function to display the relays as needed.
-    displayRelays();
-  }
 }
 
 // Initial call to populate relays array
 updateRelays();
-
-// Add an event listener to the toggle switch
-document.getElementById("relayToggle").addEventListener("change", updateRelays);
 
 function displayRelays() {
   // Implement code to display the relays in your UI as per your requirements.
