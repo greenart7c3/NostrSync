@@ -64,7 +64,7 @@ const fetchAndBroadcast = async () => {
   downloadFile(data, 'nostr-backup.js')
 
    $("#file-download").html(txt.download);
-   downloadFileCopy(data, "nostr-backup.jsonl);
+   downloadFileCopy(data, "nostr-backup.jsonl");
   
   
   // inform user that app is broadcasting events to relays
